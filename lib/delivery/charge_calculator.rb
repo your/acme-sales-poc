@@ -6,8 +6,10 @@ module SalesPoC
       end
 
       def calculate(subtotal)
-        # TODO: apply rules
-        return 0.round(2)
+        return 0 if subtotal.zero?
+
+        rule = @rules.find { |rule| subtotal >= rule[:min] && subtotal < rule[:max] }
+        rule ? rule[:charge].to_d.round(2) : 0
       end
     end
   end
