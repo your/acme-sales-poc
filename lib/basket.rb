@@ -19,7 +19,7 @@ module SalesPoC
       subtotal = items.sum(&:final_price).round(2)
       delivery_charge = delivery_calculator.calculate(subtotal)
 
-      (subtotal + delivery_charge).round(2)
+      (subtotal + delivery_charge).round(2).to_f
     end
 
     private
