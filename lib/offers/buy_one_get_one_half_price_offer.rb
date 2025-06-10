@@ -5,6 +5,12 @@ module SalesPoC
     class BuyOneGetOneHalfPriceOffer < BaseStrategy
       HALF_PRICE_DISCOUNT = 0.5.to_d
 
+      attr_reader :product_code
+
+      def initialize(product_code)
+        @product_code = product_code
+      end
+
       def apply(items)
         matching_items = items.select { |item| item.code == product_code }
         return if matching_items.length < 2
