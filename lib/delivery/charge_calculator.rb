@@ -7,7 +7,7 @@ module SalesPoC
 
       def calculate(subtotal)
         # TODO: apply rules
-        return 0
+        return 0.round(2)
       end
     end
   end
