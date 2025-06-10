@@ -1,11 +1,11 @@
 module SalesPoC
-  require "offers"
-  require "delivery/charge_calculator"
-  require "product"
-  require "basket"
+  require_relative "offers"
+  require_relative "delivery/charge_calculator"
+  require_relative "product"
+  require_relative "basket"
 
-  require "seeds/delivery_rules"
-  require "seeds/product_catalogue"
+  require_relative "seeds/delivery_rules"
+  require_relative "seeds/product_catalogue"
 
   class << self
     def new_basket
